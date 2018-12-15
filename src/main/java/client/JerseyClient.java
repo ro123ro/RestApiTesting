@@ -23,8 +23,8 @@ public class JerseyClient {
         ClientResponse response = webResource
                 .accept(MediaType.APPLICATION_JSON)
                 .get(ClientResponse.class);
-        log.info("Recieved status response - [{}]", new Object[]{response.getStatus()});
-        log.info("Recieved response - [{}]", new Object[]{response.getEntity(String.class)});
+        log.info("Get status response - [{}]", new Object[]{response.getStatus()});
+        log.info("Get response - [{}]", new Object[]{response.getEntity(String.class)});
         return response;
     }
 
