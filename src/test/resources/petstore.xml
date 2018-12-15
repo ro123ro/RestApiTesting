@@ -1,0 +1,22 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Petstore">
+    <test name="Pet">
+    <classes>
+        <class name="petStore.PetTest">
+            <methods>
+                <include name ="test"/>
+
+            </methods>
+        </class>
+        <class name="userTests.UserTest">
+            <methods>
+                <include name = "test1"/>
+
+            </methods>
+        </class>
+    </classes>
+    </test>
+
+
+</suite>

@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+}
+
+group 'Roma'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.testng', name: 'testng', version: '6.14.3'
+    compile group: 'com.sun.jersey', name: 'jersey-client', version: '1.19.4'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.9.7'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.7'
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+}
+
+task runTestPet(type: Test) {
+    useTestNG() {
+        suites "src/test/resources/petstore.xml"
+    }
+}
+task runTestUser(type: Test) {
+    useTestNG()
+    include "userTests/**"
+}
+task runTestsUserAndPet(type: Test) {
+    useTestNG()
+    include "userTests/**"
+    include "petStore/**"
+}
+
+
